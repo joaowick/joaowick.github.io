@@ -1,1 +1,328 @@
-<h1>Hello World, Github Pages</h1>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Torres, engenheiro de software Full Stack. Experiência sólida em Angular, arquitetura frontend e acessibilidade, ampliando sua atuação com Java e Spring Boot na Porto." />
+  <meta name="author" content="João Torres" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23090d16'/%3E%3Ctext x='20' y='27' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='20' fill='%2338bdf8'%3EJT%3C/text%3E%3C/svg%3E" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="João Torres | Engenheiro de Software Full Stack" />
+  <meta property="og:description" content="Experiência sólida em Angular, arquitetura frontend e acessibilidade. Mais de seis anos no Itaú; hoje na Porto, ampliando a atuação Full Stack com Angular, Java e Spring Boot." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:image" content="https://joaowick.github.io/assets/social-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="João Torres — Engenheiro de Software. Angular, Java e Acessibilidade." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="João Torres | Engenheiro de Software Full Stack" />
+  <meta name="twitter:description" content="Experiência sólida em Angular, arquitetura frontend e acessibilidade. Expansão para Full Stack com Angular, Java e Spring Boot na Porto." />
+  <meta name="twitter:image" content="https://joaowick.github.io/assets/social-card.png" />
+  <meta name="twitter:image:alt" content="João Torres — Engenheiro de Software. Angular, Java e Acessibilidade." />
+  <!-- Public URL metadata is maintained by scripts/configure-public-url.mjs. -->
+  <script type="application/ld+json" id="person-schema">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "João Torres",
+  "jobTitle": "Engenheiro de Software Full Stack",
+  "sameAs": [
+    "https://linkedin.com/in/joaotorresmoreira"
+  ],
+  "knowsAbout": [
+    "Angular",
+    "Arquitetura frontend",
+    "Acessibilidade digital",
+    "Microfrontends",
+    "Observabilidade",
+    "Java",
+    "Spring Boot"
+  ],
+  "url": "https://joaowick.github.io/"
+}
+  </script>
+
+  <title>João Torres | Engenheiro de Software Full Stack</title>
+
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://joaowick.github.io/" />
+  <meta property="og:url" content="https://joaowick.github.io/" />
+</head>
+<body>
+  <!-- Link para pular direto para o conteúdo (A11y) -->
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header" role="banner">
+    <div class="container header-container">
+      <a href="#hero" class="logo" aria-label="Página inicial de João Torres">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">João Torres</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav" role="navigation" aria-label="Navegação Principal">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+          <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência</a></li>
+          <li class="nav-item"><a href="#habilidades" class="nav-link">Competências</a></li>
+          <li class="nav-item"><a href="#contato" class="nav-link nav-link--cta">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Ativar tema claro" title="Ativar tema claro">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menu de navegação">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero-bg-glow hero-bg-glow--1" aria-hidden="true"></div>
+      <div class="hero-bg-glow hero-bg-glow--2" aria-hidden="true"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge-group">
+            <span class="status-badge"><span class="status-pulse" aria-hidden="true"></span>Atualmente na Porto</span>
+            <span class="pwd-badge" title="Pessoa com deficiência">PcD / PwD</span>
+          </div>
+          <h1 class="hero-title" id="hero-title"><span class="gradient-text">João Torres</span></h1>
+          <p class="hero-subtitle"><span class="role-highlight">Engenheiro de Software Full Stack</span></p>
+          <p class="hero-specialties">Angular · Java · Spring Boot · Acessibilidade</p>
+          <p class="hero-description">Experiência sólida em <strong>Angular</strong>, arquitetura frontend, acessibilidade e observabilidade. Após mais de seis anos no <strong>Itaú Unibanco</strong>, atualmente atuo na <strong>Porto</strong>, ampliando minha atuação para desenvolvimento <strong>Full Stack com Angular, Java e Spring Boot</strong>.</p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn--primary">Ver projetos <span aria-hidden="true">↗</span></a>
+            <a href="#contato" class="btn btn--secondary">Vamos conversar</a>
+            <a href="https://linkedin.com/in/joaotorresmoreira" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="hero-location">São Paulo, Brasil <span aria-hidden="true">·</span> Português e Libras nativos <span aria-hidden="true">·</span> Inglês avançado</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="projetos" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trabalhos selecionados</span>
+          <h2 class="section-title" id="projects-title">Projetos em destaque</h2>
+          <p class="section-subtitle">Aplicações de arquitetura, acessibilidade e observabilidade.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card project-card--featured">
+            <span class="project-org">FESAI · Projeto realizado</span>
+            <h3 class="project-title">Tecnologia em Libras</h3>
+            <p class="project-desc">Cofundei e desenvolvi uma plataforma colaborativa para facilitar o acesso da comunidade surda e de intérpretes ao vocabulário de tecnologia em Libras.</p>
+            <div class="project-tags"><span class="tag">Angular</span><span class="tag">AWS</span><span class="tag">Acessibilidade</span></div>
+            <p class="project-note">Participação encerrada. Não atuo na gestão ou manutenção atual.</p>
+            <details class="content-details">
+              <summary>Minha contribuição na FESAI</summary>
+              <div class="detail-content">
+                <p><strong>Contexto:</strong> facilitar o acesso ao vocabulário técnico de TI em Libras e reunir sinais em um espaço colaborativo.</p>
+                <p><strong>Minha atuação:</strong> como cofundador e Tech Lead, desenvolvi o frontend, a infraestrutura e recursos de acessibilidade.</p>
+                <p><strong>Resultado:</strong> plataforma com sinais em vídeo, navegação por teclado e semântica acessível para apoiar a consulta ao vocabulário técnico.</p>
+                <p><strong>Tecnologias:</strong> Angular e AWS, com hospedagem S3, distribuição CloudFront e funções Lambda.</p>
+                <p>Esta descrição registra minha contribuição no período em que participei. A versão atual pode ter mudado.</p>
+                <a class="text-link" href="https://fesai.com.br" target="_blank" rel="noopener noreferrer">Visitar site da FESAI <span aria-hidden="true">↗</span></a>
+              </div>
+            </details>
+          </article>
+          <article class="project-card">
+            <span class="project-org">Porto · Em andamento</span>
+            <h3 class="project-title">Frotas 4.0</h3>
+            <p class="project-desc">Desde setembro de 2026, integro o time responsável pela evolução do Frotas 4.0, na vertical de Seguros da Porto, ampliando minha atuação Full Stack com Angular, Java e Spring Boot.</p>
+            <div class="project-tags"><span class="tag">Angular</span><span class="tag">Java</span><span class="tag">Spring Boot</span></div>
+            <details class="content-details">
+              <summary>Minha atuação na Porto</summary>
+              <div class="detail-content">
+                <p><strong>Contexto:</strong> entrada na vertical de Seguros em setembro de 2026, integrando o time responsável pelo Frotas 4.0.</p>
+                <p><strong>Atuação atual:</strong> onboarding técnico, entendimento da arquitetura e das regras de negócio e preparação para atuação Full Stack na evolução do produto.</p>
+                <p><strong>Stack:</strong> Angular no frontend e Java com Spring Boot no backend.</p>
+              </div>
+            </details>
+          </article>
+          <article class="project-card">
+            <span class="project-org">Itaú · Plataforma 360</span>
+            <h3 class="project-title">Microfrontends e observabilidade</h3>
+            <p class="project-desc">Contribuí para deploys independentes por squad e para o acompanhamento das aplicações, com microfrontends e dashboards para investigação de incidentes.</p>
+            <div class="project-tags"><span class="tag">Angular</span><span class="tag">Module Federation</span><span class="tag">Datadog</span><span class="tag">AWS</span></div>
+            <details class="content-details">
+              <summary>Minha contribuição no Itaú</summary>
+              <div class="detail-content">
+                <p><strong>Contexto:</strong> diferentes squads precisavam evoluir produtos financeiros e acompanhar o comportamento das aplicações em produção.</p>
+                <p><strong>Minha atuação:</strong> participei da arquitetura de microfrontends e da migração de Splunk para Datadog, estruturando dashboards de APM e RUM.</p>
+                <p><strong>Resultado:</strong> deploys independentes por squad e visibilidade da saúde das aplicações para apoiar a investigação de incidentes.</p>
+                <p><strong>Tecnologias:</strong> Angular, TypeScript, Webpack Module Federation, Datadog e AWS.</p>
+                <p>Também atuei como ponto focal de acessibilidade, com auditorias WCAG 2.1 e implementação de padrões ARIA.</p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Trajetória</span>
+          <h2 class="section-title" id="experience-title">Experiência profissional</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-marker timeline-marker--current" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div><h3 class="timeline-role">Engenharia de Software</h3><p class="timeline-company">Porto · Programa de Formação de TI</p></div>
+                <span class="timeline-period timeline-period--current">Mai 2026 – Atual</span>
+              </div>
+              <p class="timeline-description"><strong>Mai 2026:</strong> ingresso como trainee no Programa de Formação de TI — Núcleo TI.<br><strong>Set 2026:</strong> entrada na vertical de Seguros, no Frotas 4.0, iniciando atuação Full Stack com Angular, Java e Spring Boot.</p>
+              <ul class="timeline-duties">
+                <li>Integração ao time e estudo da arquitetura e das regras de negócio do Frotas 4.0.</li>
+                <li>Expansão para Full Stack, combinando a experiência em Angular com Java e Spring Boot.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div><h3 class="timeline-role">Analista de Engenharia TI Pleno</h3><p class="timeline-company">Itaú Unibanco</p></div>
+                <span class="timeline-period">Jan 2020 – Fev 2026</span>
+              </div>
+              <ul class="timeline-duties">
+                <li>Desenvolvimento de produtos financeiros em Angular e TypeScript na Plataforma 360.</li>
+                <li>Microfrontends, observabilidade, mensuração de jornadas com GA4 e acessibilidade.</li>
+                <li>Reconhecimento interno PRAD 2022 por desempenho.</li>
+              </ul>
+              <details class="content-details">
+                <summary>Outras entregas no Itaú</summary>
+                <div class="detail-content">
+                  <p><strong>Analytics em Finanças:</strong> implementei GA4 e Google Tag Manager nas jornadas de Pix, Cartões, Crédito e Consignado, nos segmentos Uniclass, Varejo e Personnalité.</p>
+                  <p><strong>Sistema de Pagamentos · Jan 2020 – Dez 2021:</strong> desenvolvi interfaces Angular integradas a APIs REST para automação de Cash Management e rotinas de operações bancárias.</p>
+                  <p><strong>Práticas de engenharia:</strong> testes com Cypress e Jest, infraestrutura com AWS e Terraform e uso de Copilot e Devin em tarefas de desenvolvimento.</p>
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div><h3 class="timeline-role">Desenvolvedor Frontend</h3><p class="timeline-company">BRQ Digital Solutions · Cartões Itaú Mobile</p></div>
+                <span class="timeline-period">2019 – 2020</span>
+              </div>
+              <ul class="timeline-duties">
+                <li>Desenvolvimento de componentes web mobile para a jornada de cartões.</li>
+                <li>Acessibilidade com WCAG 2.1 e ARIA, com suporte a VoiceOver e NVDA.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="habilidades" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Competências</span>
+          <h2 class="section-title" id="skills-title">Principais tecnologias e práticas</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Frontend</h3>
+            <p>Experiência principal em Angular e TypeScript. JavaScript, RxJS, NgRx, Webpack e microfrontends com Module Federation. Também React.</p>
+          </div>
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Backend e APIs</h3>
+            <p>Java, Spring Boot, Kotlin, APIs REST e integração entre serviços, complementando a atuação em Angular no desenvolvimento Full Stack.</p>
+          </div>
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Qualidade e acessibilidade</h3>
+            <p>Auditorias de acessibilidade, WCAG, WAI-ARIA, NVDA e VoiceOver. Testes com Cypress e Jest e revisão de código.</p>
+          </div>
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">DevOps e cloud</h3>
+            <p>AWS e Terraform. Pipelines de CI/CD com Jenkins e GitHub Actions.</p>
+          </div>
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">Observabilidade e dados</h3>
+            <p>Datadog APM/RUM, GA4 e Google Tag Manager para monitoramento e mensuração de jornadas.</p>
+          </div>
+          <div class="skill-category-card">
+            <h3 class="skill-cat-title">IA no desenvolvimento</h3>
+            <p>Desenvolvimento assistido por Claude Code e GitHub Copilot. Experiência com Devin durante a atuação no Itaú.</p>
+          </div>
+        </div>
+        <div class="education-strip" id="certificacoes">
+          <h3>Formação e certificações</h3>
+          <p>Ciência da Computação <span>2019</span> · AWS Certified Cloud Practitioner <span>2024</span></p>
+          <details class="content-details">
+            <summary>Formação complementar</summary>
+            <div class="detail-content">
+              <p>Practitioner Data &amp; Analytics Foundation (2024) · Engenharia de Prompts (2025).</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato" aria-labelledby="contact-title">
+      <div class="container contact-compact">
+        <div>
+          <span class="section-tag">Contato</span>
+          <h2 class="section-title" id="contact-title">Vamos conversar?</h2>
+          <p class="section-subtitle">Para oportunidades em engenharia frontend e Full Stack, entre em contato por e-mail ou LinkedIn.</p>
+        </div>
+        <div class="contact-actions">
+          <a href="mailto:joaotorrez14.dev@gmail.com" class="btn btn--primary">joaotorrez14.dev@gmail.com</a>
+          <a href="https://linkedin.com/in/joaotorresmoreira" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">Conectar no LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-compact">
+      <p>&copy; <span id="current-year">2026</span> João Torres</p>
+      <a class="text-link" href="#hero">Voltar ao início ↑</a>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" aria-hidden="true">✓</span>
+    <span class="toast-message" id="toast-message"></span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
