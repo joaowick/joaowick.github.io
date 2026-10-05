@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initActiveNavLink();
   initCurrentYear();
+  initAnalytics();
 });
 
 /* --------------------------------------------------------------------------
@@ -196,4 +197,23 @@ function initCurrentYear() {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+}
+
+/* --------------------------------------------------------------------------
+   11. ANALYTICS (GOATCOUNTER)
+   -------------------------------------------------------------------------- */
+function initAnalytics() {
+  const track = (path, title) => {
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      window.goatcounter.count({ path, title, event: true });
+    }
+  };
+
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (href.startsWith('mailto:')) track('clique-email', 'Clique no e-mail');
+    else if (href.includes('linkedin.com')) track('clique-linkedin', 'Clique no LinkedIn');
+  });
 }
