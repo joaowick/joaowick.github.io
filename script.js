@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNavLink();
   initCurrentYear();
   initAnalytics();
+  initPrintDetails();
 });
 
 /* --------------------------------------------------------------------------
@@ -215,5 +216,20 @@ function initAnalytics() {
     const href = link.getAttribute('href');
     if (href.startsWith('mailto:')) track('clique-email', 'Clique no e-mail');
     else if (href.includes('linkedin.com')) track('clique-linkedin', 'Clique no LinkedIn');
+  });
+}
+
+/* --------------------------------------------------------------------------
+   12. IMPRESSÃO: ABRE OS DETALHES RECOLHIDOS (PDF DO CURRÍCULO)
+   -------------------------------------------------------------------------- */
+function initPrintDetails() {
+  let reopened = [];
+  window.addEventListener('beforeprint', () => {
+    reopened = [...document.querySelectorAll('details:not([open])')];
+    reopened.forEach(details => details.setAttribute('open', ''));
+  });
+  window.addEventListener('afterprint', () => {
+    reopened.forEach(details => details.removeAttribute('open'));
+    reopened = [];
   });
 }

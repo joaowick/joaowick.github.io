@@ -1782,7 +1782,7 @@ button {
 .section-header { max-width: none; margin: 0 0 30px; }
 .section-title { font-size: clamp(1.7rem, 3vw, 2.2rem); margin-bottom: 12px; }
 .section-subtitle { font-size: 1rem; }
-.projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
+.projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch; }
 .project-card { min-width: 0; min-height: 360px; padding: 24px; }
 .project-card:hover { transform: none; }
 .project-card--featured { grid-column: auto; background: var(--gradient-card); }
@@ -1793,6 +1793,7 @@ button {
 .project-note { font-size: .8rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 16px; }
 .content-details { border-top: 1px solid var(--border-subtle); padding-top: 12px; }
 .project-card > .content-details { margin-top: auto; }
+.project-card > .text-link { margin-top: auto; align-self: flex-start; }
 .content-details summary { color: var(--accent-cyan); cursor: pointer; font-size: .875rem; font-weight: 600; padding: 8px 0; }
 .content-details summary::marker { color: var(--accent-cyan); }
 .detail-content { padding-top: 10px; color: var(--text-secondary); font-size: .9rem; line-height: 1.7; }
@@ -1833,7 +1834,6 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
 
 @media (max-width: 1024px) {
   .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .projects-grid .project-card:last-child { grid-column: 1 / -1; min-height: 0; }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-compact { grid-template-columns: 1fr; gap: 24px; }
   .contact-actions { flex-direction: row; flex-wrap: wrap; }
@@ -1859,4 +1859,105 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
   .timeline-marker { left: -20px; }
   .timeline-content { padding: 16px; }
   .hero-actions .btn { flex: 1 1 auto; }
+}
+
+/* --------------------------------------------------------------------------
+   IMPRESSÃO / PDF DO CURRÍCULO
+   O mesmo conteúdo do portfólio é reorganizado no formato do currículo
+   (Resumo, Experiência, Projetos, Habilidades, Formação). Gere o PDF com
+   `node scripts/export-cv.mjs` ou use Ctrl+P > Salvar como PDF.
+   -------------------------------------------------------------------------- */
+.cv-contact, .cv-only { display: none; }
+
+@media print {
+  @page { size: A4; margin: 8mm 12mm; }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    color: #1a1a1a !important;
+    -webkit-text-fill-color: #1a1a1a !important;
+  }
+
+  html, body { background: #fff !important; font-size: 9pt; line-height: 1.25; }
+  body { font-family: var(--font-sans); }
+
+  .skip-link, .header, .toast, .hero-bg-glow, .hero-badge-group, .hero-actions,
+  .hero-location, .section-tag, .section-subtitle, .contact-section, .footer,
+  .project-note, .project-tags, .content-details summary,
+  .project-card:not(.project-card--featured), .timeline-marker,
+  #palestras .detail-content, #reconhecimentos .detail-content,
+  .text-link span[aria-hidden="true"], .screen-only, .print-hide,
+  .timeline-item .content-details { display: none !important; }
+  .cv-only { display: block !important; }
+
+  .container { max-width: none; padding: 0; }
+  main { display: flex; flex-direction: column; }
+  .section, .hero { padding: 0 !important; margin: 0 0 4pt; min-height: 0 !important; }
+  .hero { order: 1; } #experiencia { order: 2; } #projetos { order: 3; } #habilidades { order: 4; }
+
+  /* Detalhes recolhidos na tela aparecem abertos no PDF */
+  .content-details { border: 0 !important; padding: 0 !important; margin-top: 3pt !important; }
+  .content-details::details-content { content-visibility: visible; display: block; }
+  .detail-content { padding: 0; font-size: 9pt; line-height: 1.4; }
+  .detail-content p + p { margin-top: 3pt; }
+
+  /* Cabeçalho: nome à esquerda, contatos à direita */
+  .hero-content { display: grid; grid-template-columns: 1fr auto; column-gap: 16pt; align-items: start; }
+  .cv-contact { display: block; grid-column: 2; grid-row: 1 / span 3; list-style: none; margin: 0; padding: 0; text-align: right; font-size: 9pt; }
+  .cv-contact li { margin: 0 0 2pt; }
+  .hero-title { grid-column: 1; font-size: 20pt; line-height: 1.1; margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+  .hero-subtitle { grid-column: 1; font-size: 11pt; font-weight: 600; margin: 3pt 0 0; }
+  .hero-specialties { grid-column: 1; font-size: 9.5pt; margin: 1pt 0 0; }
+  .hero-specialties::after { content: " · PcD / PwD"; }
+  .hero-description { grid-column: 1 / -1; margin: 0; max-width: none; font-size: 9.5pt; }
+  .cv-heading { grid-column: 1 / -1; margin: 4pt 0 2pt; font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border-bottom: .75pt solid #1a1a1a; padding-bottom: 2pt; break-after: avoid; }
+  .cv-summary { grid-column: 1 / -1; margin: 0; font-size: 9.5pt; }
+  .timeline-duties.cv-only, .timeline-duties.cv-itau { display: block !important; }
+
+  /* Títulos de seção */
+  .section-header { margin: 0 0 5pt; text-align: left; break-after: avoid; }
+  .section-title { font-size: 10pt !important; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; margin: 0; border-bottom: .75pt solid #1a1a1a; padding-bottom: 2pt; }
+  h3 { font-size: 9.5pt; margin: 0; }
+
+  /* Experiência */
+  .timeline { padding: 0; border: 0 !important; }
+  .timeline::before { display: none; }
+  .timeline-item { padding: 0; margin: 0 0 4pt; break-inside: avoid; }
+  .timeline-content { padding: 0 !important; border: 0 !important; }
+  .timeline-header { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; justify-content: space-between; align-items: baseline; gap: 12pt; margin: 0; }
+  .timeline-header > div { flex: 1; }
+  .timeline-role { font-size: 10pt; font-weight: 700; }
+  .timeline-company { font-size: 9.5pt; font-style: italic; margin: 0; }
+  .timeline-period { font-family: var(--font-sans); font-size: 9pt; white-space: nowrap; border: 0 !important; padding: 0 !important; }
+  .timeline-description { margin: 3pt 0 0; }
+  .timeline-duties { margin: 3pt 0 0; padding-left: 14pt; }
+  .timeline-duties li { margin: 0 0 1pt; }
+
+  /* Projetos */
+  .projects-grid { display: block; }
+  .project-card { padding: 0 !important; border: 0 !important; }
+  .project-org { font-family: var(--font-sans); font-size: 9pt; font-style: italic; text-transform: none; letter-spacing: 0; margin: 0; display: block; }
+  .project-title { font-size: 10pt; font-weight: 700; margin: 0; }
+  .project-card.project-card--featured > * { margin-bottom: 0 !important; }
+  .project-desc { margin: 2pt 0 0; }
+
+  /* Habilidades */
+  .skills-grid { display: block; break-inside: avoid; }
+  .skill-category-card { display: grid; grid-template-columns: 105pt 1fr; gap: 8pt; padding: 0 !important; border: 0 !important; margin: 0 0 2pt; break-inside: avoid; }
+  .skill-cat-title { font-size: 9.5pt; font-weight: 700; margin: 0; }
+  .skill-category-card p { margin: 0; }
+
+  /* Formação, palestras e reconhecimentos */
+  .education-strip { padding: 0 !important; border: 0 !important; margin: 4pt 0 0; break-inside: avoid; }
+  .education-strip h3 { break-after: avoid; }
+  .education-strip h3 { font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border-bottom: .75pt solid #1a1a1a; padding-bottom: 2pt; margin-bottom: 4pt; }
+  .education-strip p { margin: 0; }
+  .education-strip span { font-weight: 400; }
+
+  a { text-decoration: none; }
 }
