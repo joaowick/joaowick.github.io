@@ -339,6 +339,17 @@ button {
   color: #fff;
 }
 
+.nav-link--download {
+  color: #04121c;
+  background: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan);
+}
+
+.nav-link--download:hover {
+  background: #7dd3fc;
+  color: #04121c;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -494,7 +505,7 @@ button {
 .hero-bg-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
+  /* O radial-gradient já termina em transparente; blur(120px) era redundante e muito caro de pintar. */
   pointer-events: none;
   z-index: 0;
 }
@@ -1868,6 +1879,8 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
    `node scripts/export-cv.mjs` ou use Ctrl+P > Salvar como PDF.
    -------------------------------------------------------------------------- */
 .cv-contact, .cv-only { display: none; }
+.footer .version { opacity: .7; }
+.footer .version code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; }
 
 @media print {
   @page { size: A4; margin: 8mm 12mm; }
@@ -1898,7 +1911,7 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
   .container { max-width: none; padding: 0; }
   main { display: flex; flex-direction: column; }
   .section, .hero { padding: 0 !important; margin: 0 0 4pt; min-height: 0 !important; }
-  .hero { order: 1; } #experiencia { order: 2; } #projetos { order: 3; } #habilidades { order: 4; }
+  .hero { order: 1; } #experiencia { order: 2; } #habilidades { order: 4; }
 
   /* Detalhes recolhidos na tela aparecem abertos no PDF */
   .content-details { border: 0 !important; padding: 0 !important; margin-top: 3pt !important; }
@@ -1910,6 +1923,7 @@ main:focus, section[tabindex="-1"]:focus { outline: none; }
   .hero-content { display: grid; grid-template-columns: 1fr auto; column-gap: 16pt; align-items: start; }
   .cv-contact { display: block; grid-column: 2; grid-row: 1 / span 3; list-style: none; margin: 0; padding: 0; text-align: right; font-size: 9pt; }
   .cv-contact li { margin: 0 0 2pt; }
+  .cv-contact .cv-version { font-size: 7pt; opacity: .6; font-family: ui-monospace, Consolas, monospace; }
   .hero-title { grid-column: 1; font-size: 20pt; line-height: 1.1; margin: 0; text-transform: uppercase; letter-spacing: .02em; }
   .hero-subtitle { grid-column: 1; font-size: 11pt; font-weight: 600; margin: 3pt 0 0; }
   .hero-specialties { grid-column: 1; font-size: 9.5pt; margin: 1pt 0 0; }

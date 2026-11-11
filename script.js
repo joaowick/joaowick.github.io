@@ -90,7 +90,9 @@ function initMobileMenu() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       toggleNav(false);
-      const target = document.querySelector(link.getAttribute('href'));
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#') || href === '#') return; // ignora links externos (ex.: PDF do CV)
+      const target = document.querySelector(href);
       if (target) {
         target.setAttribute('tabindex', '-1');
         target.focus({ preventScroll: true });
